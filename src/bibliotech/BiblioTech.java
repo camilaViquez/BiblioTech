@@ -19,7 +19,7 @@ public class BiblioTech {
      */
     public static void main(String[] args) 
     {  
-       System.out.print("jjjjjjj");
+      
        login Login = new login();
        Login.setVisible(true);
       
