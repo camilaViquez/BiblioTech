@@ -9,7 +9,7 @@ package domain;
  *
  * @author Leonardo
  */
-public class Administrador extends person {
+public class Administrador extends Person {
     
     private int administradorId;
 

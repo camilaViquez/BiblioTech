@@ -9,7 +9,7 @@ package domain;
  *
  * @author Leonardo
  */
-public class person {
+public class Person {
      private String name;
     private String lastName;
 

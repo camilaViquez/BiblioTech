@@ -9,7 +9,7 @@ package domain;
  *
  * @author Leonardo
  */
-public class Student extends person {
+public class Student extends Person {
     private String studentId;
    
 
