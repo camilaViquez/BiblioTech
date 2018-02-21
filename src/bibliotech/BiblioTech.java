@@ -5,6 +5,9 @@
  */
 package bibliotech;
 
+import view.login;
+
+
 /**
  *
  * @author camil
@@ -14,9 +17,12 @@ public class BiblioTech {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        // TODO code application logic here
-        //888888888
+    public static void main(String[] args) 
+    {  
+      
+       login Login = new login();
+       Login.setVisible(true);
+      
         
     }
     

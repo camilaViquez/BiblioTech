@@ -12,9 +12,18 @@ package domain;
 public class AudiVisulMaterial extends Description {
     private int code;
     private String type;
+    private String color;
 
     public int getCode() {
         return code;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
     }
 
     public void setCode(int code) {
