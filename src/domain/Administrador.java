@@ -12,6 +12,16 @@ package domain;
 public class Administrador extends Person {
     
     private int administradorId;
+    private String password;
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+    
 
     public int getAdministradorId() {
         return administradorId;

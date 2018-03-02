@@ -12,6 +12,17 @@ package domain;
 public class Person {
      private String name;
     private String lastName;
+    private String password;
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+    
+    
 
     public String getName() {
         return name;

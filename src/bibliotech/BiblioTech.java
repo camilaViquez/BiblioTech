@@ -22,6 +22,7 @@ public class BiblioTech {
       
        login Login = new login();
        Login.setVisible(true);
+     
       
         
     }
