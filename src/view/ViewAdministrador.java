@@ -27,21 +27,108 @@ public class ViewAdministrador extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        RegisterBook = new javax.swing.JButton();
+        AudiovisulaMaterial = new javax.swing.JButton();
+        RegisterDigitalB1 = new javax.swing.JButton();
+        RegisterDigitalB2 = new javax.swing.JButton();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+
+        RegisterBook.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        RegisterBook.setText("Register Book ");
+        RegisterBook.setActionCommand("Register Digital\n       Book ");
+        RegisterBook.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RegisterBookActionPerformed(evt);
+            }
+        });
+
+        AudiovisulaMaterial.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        AudiovisulaMaterial.setText("Register Audiovisul Material");
+        AudiovisulaMaterial.setActionCommand("Register Digital\n       Book ");
+        AudiovisulaMaterial.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AudiovisulaMaterialActionPerformed(evt);
+            }
+        });
+
+        RegisterDigitalB1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        RegisterDigitalB1.setText("Register Student ");
+        RegisterDigitalB1.setActionCommand("Register Digital\n       Book ");
+        RegisterDigitalB1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RegisterDigitalB1ActionPerformed(evt);
+            }
+        });
+
+        RegisterDigitalB2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        RegisterDigitalB2.setText("Configuration");
+        RegisterDigitalB2.setActionCommand("Register Digital\n       Book ");
+        RegisterDigitalB2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RegisterDigitalB2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(RegisterBook, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 22, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(RegisterDigitalB2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(RegisterDigitalB1, javax.swing.GroupLayout.DEFAULT_SIZE, 179, Short.MAX_VALUE)
+                        .addContainerGap())
+                    .addComponent(AudiovisulaMaterial)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(RegisterBook, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(AudiovisulaMaterial, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 101, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(RegisterDigitalB2, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(RegisterDigitalB1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(34, 34, 34))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void RegisterBookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterBookActionPerformed
+         // TODO add your handling code here:
+         ViewRegisterBook registerBook = new ViewRegisterBook ();
+         registerBook.setVisible(true);
+         
+    }//GEN-LAST:event_RegisterBookActionPerformed
+
+    private void AudiovisulaMaterialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AudiovisulaMaterialActionPerformed
+        // TODO add your handling code here:
+        ViewRegisterAudiovisualMaterial m= new ViewRegisterAudiovisualMaterial();
+        m.setVisible(true);
+    }//GEN-LAST:event_AudiovisulaMaterialActionPerformed
+
+    private void RegisterDigitalB1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterDigitalB1ActionPerformed
+        // TODO add your handling code here:
+        ViewRegisterStudents registerStudents = new ViewRegisterStudents();
+        registerStudents.setVisible(true);
+    }//GEN-LAST:event_RegisterDigitalB1ActionPerformed
+
+    private void RegisterDigitalB2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterDigitalB2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_RegisterDigitalB2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -79,5 +166,9 @@ public class ViewAdministrador extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton AudiovisulaMaterial;
+    private javax.swing.JButton RegisterBook;
+    private javax.swing.JButton RegisterDigitalB1;
+    private javax.swing.JButton RegisterDigitalB2;
     // End of variables declaration//GEN-END:variables
 }

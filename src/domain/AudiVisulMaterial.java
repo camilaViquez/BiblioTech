@@ -5,6 +5,9 @@
  */
 package domain;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  *
  * @author Leonardo
@@ -13,6 +16,17 @@ public class AudiVisulMaterial extends Description {
     private int code;
     private String type;
     private String color;
+
+    public AudiVisulMaterial(int code, String type, String color,int quantity, String description) {
+        this.code = code;
+        this.type = type;
+        this.color = color;
+        setDecription(description);
+        setQuantity(quantity) ;
+        
+    }
+    
+    
 
     public int getCode() {
         return code;
@@ -38,4 +52,10 @@ public class AudiVisulMaterial extends Description {
         this.type = type;
     }
     
+    public String toString()
+    {
+        String data;
+        data = "Name: "+ type+ "\n"+"Code: " + code+ "\n"+"Description: "+ getDecription()+"\n"+"Quantity Available: "+ getQuantity();
+        return data;
+    }
 }

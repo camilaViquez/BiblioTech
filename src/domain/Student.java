@@ -15,7 +15,7 @@ public class Student extends Person {
    public boolean active ;
 
     public Student(String studentId,String name,String lastName, String career, String password) {
-        System.out.print(name+studentId+lastName);
+        System.out.print("\n"+name+studentId+lastName+"  "+ career);
         this.studentId = studentId;
         this.career = career;
         setName(name);

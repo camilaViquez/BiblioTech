@@ -13,13 +13,26 @@ public class Administrador extends Person {
     
     private int administradorId;
     private String password;
-
+    public boolean active ;
+    
+    
     public String getPassword() {
         return password;
     }
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Administrador(int administradorId, String name, String lastName ,String password) {
+        System.out.print(password);
+        System.out.print(name+lastName);
+        System.out.print(administradorId);
+        this.administradorId = administradorId;
+        this.password = password;
+        this.active = true;
+        setName(name);
+        setLastName(lastName);
     }
     
 
@@ -31,7 +44,15 @@ public class Administrador extends Person {
         this.administradorId = administradorId;
     }
     
+     public boolean isActive() {
+        return active;
+    }
+   public void setActive(boolean active) {
+        this.active = active;
+    }
     
-    
+      public int getTamaño() {
+        return getName().length()*2 + 2 + 4 + 1;
+    }
     
 }

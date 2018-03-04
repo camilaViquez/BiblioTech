@@ -16,7 +16,37 @@ public class Loan {
     private int cost;
     private Date deliveryDate;
     private Date loanDate;
+    private Book book;
+    private AudiVisulMaterial MatAud;
 
+    
+
+    public Loan(Book book) {
+        this.book = book;
+        
+    }
+
+    public Loan(AudiVisulMaterial MatAud) {
+        this.MatAud = MatAud;
+        
+    }
+    
+    public Book getBook() {
+        return book;
+    }
+
+    public void setBook(Book book) {
+        this.book = book;
+    }
+
+    public AudiVisulMaterial getMatAud() {
+        return MatAud;
+    }
+
+    public void setMatAud(AudiVisulMaterial MatAud) {
+        this.MatAud = MatAud;
+    }
+    
     public boolean isPenalty() {
         return penalty;
     }

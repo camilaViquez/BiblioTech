@@ -5,11 +5,13 @@
  */
 package domain;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Leonardo
  */
-public class Description {
+public class Description implements Serializable {
   private boolean disponibility;
   private int quantity;
   private String decription;

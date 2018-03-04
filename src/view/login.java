@@ -5,7 +5,8 @@
  */
 package view;
 
-import domain.RandomAccesFile;
+import controller.RandomAccesFile;
+import domain.Administrador;
 import domain.Student;
 import java.io.File;
 import java.io.IOException;
@@ -33,7 +34,7 @@ public class login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        password = new javax.swing.JTextField();
+        passwordUser = new javax.swing.JTextField();
         Administrator = new javax.swing.JRadioButton();
         jLabel1 = new javax.swing.JLabel();
         Student = new javax.swing.JRadioButton();
@@ -43,9 +44,9 @@ public class login extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        password.addActionListener(new java.awt.event.ActionListener() {
+        passwordUser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                passwordActionPerformed(evt);
+                passwordUserActionPerformed(evt);
             }
         });
 
@@ -89,17 +90,15 @@ public class login extends javax.swing.JFrame {
                         .addGap(67, 67, 67)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(passwordUser, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(56, 56, 56)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(Student)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Administrator))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(40, 40, 40)
-                                .addComponent(enterButton, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addComponent(Student)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Administrator))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(95, 95, 95)
+                        .addComponent(enterButton, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(23, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -110,7 +109,7 @@ public class login extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(passwordUser, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -119,103 +118,102 @@ public class login extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Administrator)
                     .addComponent(Student))
-                .addGap(26, 26, 26)
+                .addGap(18, 18, 18)
                 .addComponent(enterButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(54, Short.MAX_VALUE))
+                .addContainerGap(62, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordActionPerformed
+    private void passwordUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordUserActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_passwordActionPerformed
+    }//GEN-LAST:event_passwordUserActionPerformed
 
     private void nameUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameUserActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_nameUserActionPerformed
-
+    public static String name;
+    public static String password;
     private void enterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enterButtonActionPerformed
-        // TODO add your handling code here:
-       /* String nombre = txtNombre.getText().trim();
-        if(nombre.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "¡No se ingreso el nombre de la persona!", "Advertencia", JOptionPane.WARNING_MESSAGE);
-            return;
-        }    
-        String _edad = txtEdad.getText().trim();
-        if(_edad.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "¡No se ingreso la edad de la persona!", "Advertencia", JOptionPane.WARNING_MESSAGE);
-            return;
-        }   
-        int edad;
-        try {
-            edad = Integer.parseInt(_edad);
-        } catch(NumberFormatException nfe) {
-            JOptionPane.showMessageDialog(this, "Debe ingresar un número entero para la edad.", "Error", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-        
-        try {
-            AccesoAleatorio.crearFileAlumno( new File("personas.dat") );
-            AccesoAleatorio.añadirPersona( new Persona(nombre, edad, true) );
-            AccesoAleatorio.cerrar();
-            JOptionPane.showMessageDialog(this, "El registro se realizó correctamente.", "Notificación", JOptionPane.INFORMATION_MESSAGE);
-        } catch (IOException ex) {
-            JOptionPane.showMessageDialog(this, "Error en la escritura de datos.", "Error", JOptionPane.ERROR_MESSAGE);
-        }
-    }*/
-        if(Student.isSelected())
-        {
-            String name = nameUser.getText().trim();
-        if(name.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Did not enter the username", "Warning", JOptionPane.WARNING_MESSAGE);
-            return;
-        } 
-        
-         String password = nameUser.getText().trim();
-        if(password.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Did not enter the password", "Warning", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-        try {
-           
-            RandomAccesFile.createFileStudent( new File("students.dat") );
-            int i =  RandomAccesFile.searchRegister(name);
-            JOptionPane.showMessageDialog(this,name+String.valueOf(i));
-            if(i==-1) {
-                JOptionPane.showMessageDialog(this, "Name Incorrect", "Warning", JOptionPane.WARNING_MESSAGE);             
+        if (Student.isSelected()) {
+            name = nameUser.getText().trim();
+            if (name.isEmpty()) {
+                JOptionPane.showMessageDialog(this, "Did not enter the username", "Warning", JOptionPane.WARNING_MESSAGE);
                 return;
             }
-            ViewAdministrador viewA = new ViewAdministrador(); 
-            viewA.setVisible(true);
-            
-            RandomAccesFile.close();
-        } catch(IOException e) {
-            JOptionPane.showMessageDialog(this, "Error en la búsqueda de registros.", "Error", JOptionPane.ERROR_MESSAGE);
-        }  
-        }
-        else 
-        {
-            if(Administrator.isSelected())
-            {
-                
-            }else 
-            {
-               JOptionPane.showMessageDialog(this,"You must select an option");  
+
+            password = passwordUser.getText().trim();
+            if (password.isEmpty()) {
+                JOptionPane.showMessageDialog(this, "Did not enter the password", "Warning", JOptionPane.WARNING_MESSAGE);
+                return;
             }
-                    
-        }/*
+            try {
+
+                RandomAccesFile.createFile(new File("students.dat"));
+                int i = RandomAccesFile.searchEstudentRegister(name, password);
+                
+                //JOptionPane.showMessageDialog(this, name + String.valueOf(i));
+                if (i == -1) {
+                    JOptionPane.showMessageDialog(this, "Name Incorrect", "Warning", JOptionPane.WARNING_MESSAGE);
+                    return;
+                }
+                ViewStudent s= new ViewStudent();
+                    s.setVisible(true);
+                RandomAccesFile.close();
+            } catch (IOException e) {
+                JOptionPane.showMessageDialog(this, "Error en la búsqueda de registros.", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        } else {
+            if (Administrator.isSelected()) {
+               /* String name = nameUser.getText().trim();
+                if (name.isEmpty()) {
+                    JOptionPane.showMessageDialog(this, "Did not enter the username", "Warning", JOptionPane.WARNING_MESSAGE);
+                    return;
+                }
+
+                String password = passwordUser.getText().trim();
+                if (password.isEmpty()) {
+                    JOptionPane.showMessageDialog(this, "Did not enter the password", "Warning", JOptionPane.WARNING_MESSAGE);
+                    return;
+                }
+                try {
+
+                    RandomAccesFile.createFile(new File("administrator.dat"));
+                    int i = RandomAccesFile.searchAdmiRegister(name, password);
+                    JOptionPane.showMessageDialog(this, name + String.valueOf(i));
+                    if (i == -1) {
+                        JOptionPane.showMessageDialog(this, "Name Incorrect", "Warning", JOptionPane.WARNING_MESSAGE);
+                        return;
+                    }
+                    ViewAdministrador viewA = new ViewAdministrador();
+                    viewA.setVisible(true);
+
+                    RandomAccesFile.close();
+                } catch (IOException e) {
+                    JOptionPane.showMessageDialog(this, "Error en la búsqueda de registros.", "Error", JOptionPane.ERROR_MESSAGE);
+                }
+            } else {
+                JOptionPane.showMessageDialog(this, "You must select an option");
+            }
+
+        */
+             ViewAdministrador viewA = new ViewAdministrador();
+                    viewA.setVisible(true);
+            }/*
         
          try {
-            RandomAccesFile.createFileStudent(new File("students.dat"));
-           RandomAccesFile.addStudent(new Student("C1", "leo","mata","Computacion","leo") );
-           RandomAccesFile.addStudent(new Student("C2", "cami","Viquez","Computacion","cami") );
+            RandomAccesFile.createFile(new File("students.dat"));
+          // RandomAccesFile.addAdministrator(new Administrador(2,"Juan","Perez","12"));
+           // RandomAccesFile.addAdministrator(new Administrador(1,"Marcos","Perez","12"));
+          // RandomAccesFile.addStudent(new Student("C3", "Juan","Perez","Computación","juan") );
             RandomAccesFile.close();
             JOptionPane.showMessageDialog(this, "El registro se realizó correctamente.", "Notificación", JOptionPane.INFORMATION_MESSAGE);
         } catch (IOException ex) {
-            JOptionPane.showMessageDialog(this, "Error en la escritura de datos.", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Error en la escritura de datos."+ex, "Error", JOptionPane.ERROR_MESSAGE);
+        System.out.print(ex);
         }//*/
-       
+        }  
     }//GEN-LAST:event_enterButtonActionPerformed
 
     /**
@@ -260,6 +258,6 @@ public class login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     public javax.swing.JTextField nameUser;
-    public javax.swing.JTextField password;
+    public javax.swing.JTextField passwordUser;
     // End of variables declaration//GEN-END:variables
 }

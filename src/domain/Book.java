@@ -5,16 +5,30 @@
  */
 package domain;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Leonardo
  */
-public class Book extends Description{
+public class Book extends Description implements Serializable {
     private String code;
     private String title;
     private String author;
     private String type;
 
+    public Book(String code, String title, String author, String type, String description) {
+        this.code = code;
+        this.title = title;
+        this.author = author;
+        this.type = type;
+        setDecription(description);
+        setDisponibility(true);
+        setQuantity(1);
+    }
+
+    
+    
     public String getCode() {
         return code;
     }
@@ -48,6 +62,11 @@ public class Book extends Description{
     }
     
     
-    
+    public String toString()
+    {
+      String   data;
+      data="Title: "+title+"\n"+" Author: "+ author+ "\n"+" ISBN: "+ code+"\n"+"Description: "+ getDecription();
+      return data;        
+    }
     
 }
