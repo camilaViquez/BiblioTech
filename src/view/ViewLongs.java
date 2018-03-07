@@ -154,20 +154,27 @@ public class ViewLongs extends javax.swing.JFrame {
         if(book != null || material != null)
         {
                 if (book != null) {
-                    Loan loan = new Loan(book);
                     java.util.Date date = new Date();
                     java.util.Date dateD;
+                     dateD = ControllerRegisterLoan.addDaysDate(date,ControllerRegisterLoan.days(0) );
+                    Loan loan = new Loan(book.getCode(),book.getTitle(),ID,dateD);
+                     ArrayList<Loan> listLoans = new ArrayList<Loan>();
+                    listLoans=ControllerRegisterLoan.read();
+                     loan.setID(listLoans.size()+1);
                    
-                    dateD = ControllerRegisterLoan.addDaysDate(date, 15);
+                   
                     JOptionPane.showMessageDialog(this, book.getTitle());
-                     loan.setLoanDate(date);
-                     loan.setDeliveryDate(dateD);
+               
                      try{
-                         ControllerRegisterLoan.write(loan);
-                         JOptionPane.showMessageDialog(this,"The item has been registered: "+loan.getBook().getTitle()+"La fecha de entrega es: " +loan.getDeliveryDate()+"La otra fecha es: "+ loan.getLoanDate());
+                         
+                         boolean v=ControllerRegisterLoan.write(loan);
+                         System.out.print(v);
+                         if(v){
+                         JOptionPane.showMessageDialog(this,"The item has been registered: "+loan.getName()+"\n"+"The delivery date: " +loan.getDeliveryDate());
+                         }
                      }catch(Exception e)
                      {
-                         JOptionPane.showMessageDialog(this,"the item has been registered");
+                         JOptionPane.showMessageDialog(this,"the item  has  not been registered");
                      }
                              
                      ControllerRegisterLoan.write(loan);
@@ -176,6 +183,28 @@ public class ViewLongs extends javax.swing.JFrame {
                 }
                 if (material != null) {
                     JOptionPane.showMessageDialog(this, material.getType());
+                    java.util.Date date = new Date();
+                    java.util.Date dateD;
+                   dateD = ControllerRegisterLoan.addDaysDate(date,ControllerRegisterLoan.days(1) );
+                    Loan loan = new Loan(String.valueOf(material.getCode()), material.getType(), ID, date);
+                     ArrayList<Loan> listLoans = new ArrayList<Loan>();
+                     listLoans=ControllerRegisterLoan.read();
+                    loan.setID(listLoans.size()+1);
+                  
+                     try{
+                         
+                        
+                         if (ControllerRegisterLoan.write(loan)){
+                         JOptionPane.showMessageDialog(this," The item has been registered: "+loan.getName() +"\n"+" The delivery date is: " +loan.getDeliveryDate());
+                     }
+                         else {
+                                 JOptionPane.showMessageDialog(this,"FALSE");}
+                     }catch(Exception e)
+                     {
+                         JOptionPane.showMessageDialog(this,"the item not has been registered");
+                     }
+                             
+                     ControllerRegisterLoan.write(loan);
 
                 }
             }
@@ -183,10 +212,7 @@ public class ViewLongs extends javax.swing.JFrame {
         {
              JOptionPane.showMessageDialog(this, "Error the article not exits" , "Error", JOptionPane.ERROR_MESSAGE);
         } 
-        //}catch(Exception e)
-        //{
-        //    JOptionPane.showMessageDialog(this,"Error the article not exits"+e);
-        //}
+       
        
         
         
