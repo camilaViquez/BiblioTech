@@ -36,6 +36,7 @@ public class ControllerRegisterBook {
             FileOutputStream fos = new FileOutputStream(f);
 
             ObjectOutputStream salida = new ObjectOutputStream(fos);
+            //ciclo que recorre la lista de libros para que puedan ser mostrados
             for (int i = 0; i < listBook.size(); i++) {
                 Book bookA= listBook.get(i);
                 System.out.print(i);
@@ -61,6 +62,7 @@ public class ControllerRegisterBook {
             File f = new File("book.obj");
             FileInputStream fis = new FileInputStream(f);
             archive = new ObjectInputStream(fis);
+            //ciclo para recorrer todo el archivo hasta la ultima linea
             while (true) {
                 Book bookA = null;
                 try {

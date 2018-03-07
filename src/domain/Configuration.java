@@ -9,6 +9,7 @@ package domain;
  *
  * @author Leonardo
  */
+//not use
 public class Configuration {
     private String password;
     private int numberDays;

@@ -168,7 +168,7 @@ public class login extends javax.swing.JFrame {
             }
         } else {
             if (Administrator.isSelected()) {
-               /* String name = nameUser.getText().trim();
+                String name = nameUser.getText().trim();
                 if (name.isEmpty()) {
                     JOptionPane.showMessageDialog(this, "Did not enter the username", "Warning", JOptionPane.WARNING_MESSAGE);
                     return;
@@ -199,10 +199,10 @@ public class login extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "You must select an option");
             }
 
-        */
+        
              ViewAdministrador viewA = new ViewAdministrador();
                     viewA.setVisible(true);
-            }/*
+            }
         
          try {
             RandomAccesFile.createFile(new File("students.dat"));
@@ -215,7 +215,7 @@ public class login extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Error en la escritura de datos."+ex, "Error", JOptionPane.ERROR_MESSAGE);
         System.out.print(ex);
         }//*/
-        }  
+         
     }//GEN-LAST:event_enterButtonActionPerformed
 
     /**

@@ -72,9 +72,7 @@ public class ControllerRegisterLoan {
     }
       
       public static boolean isNumeric(String cadena) {
-
         boolean resultado;
-
         try {
             Integer.parseInt(cadena);
             resultado = true;
@@ -112,6 +110,7 @@ public class ControllerRegisterLoan {
           }
           return null;
       } 
+     //funcion para buscar el material seleccionado en la lista que tiene todos los materiales
      public static AudiVisulMaterial materialSelected(ArrayList<AudiVisulMaterial > listMaterial,String value)
       {
           int cont=0;
@@ -208,9 +207,7 @@ public class ControllerRegisterLoan {
 
     }
 
-<<<<<<< HEAD
-       
-=======
+
     
     public static int days(int day){
     File archivo = null;
@@ -254,5 +251,5 @@ public class ControllerRegisterLoan {
     }
     
      
->>>>>>> 060d31d5b61cf28ffe30a05876a68620c0abb24d
+
 }

@@ -11,6 +11,7 @@ import java.io.Serializable;
  *
  * @author Leonardo
  */
+//clase para los libros
 public class Book extends Description implements Serializable {
     private String code;
     private String title;

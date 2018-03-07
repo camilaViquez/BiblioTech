@@ -14,6 +14,7 @@ import javax.swing.JOptionPane;
  *
  * @author Leonardo
  */
+//clase para los prestamos
 public class Loan implements Serializable {
     private boolean penalty;
     private int cost;

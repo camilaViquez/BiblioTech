@@ -9,6 +9,7 @@ package domain;
  *
  * @author Leonardo
  */
+//clase que contiene toda  la informacion de los estudiantes
 public class Student extends Person {
     private String studentId;
    private String career;

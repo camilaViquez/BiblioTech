@@ -11,6 +11,7 @@ import java.io.Serializable;
  *
  * @author Leonardo
  */
+//clase que indica la descripcion de los articulos
 public class Description implements Serializable {
   private boolean disponibility;
   private int quantity;

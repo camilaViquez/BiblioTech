@@ -9,6 +9,7 @@ package domain;
  *
  * @author Leonardo
  */
+//clase para el administrador de la aplicacion
 public class Administrador extends Person {
     
     private int administradorId;

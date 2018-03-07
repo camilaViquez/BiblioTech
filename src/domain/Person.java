@@ -9,6 +9,8 @@ package domain;
  *
  * @author Leonardo
  */
+//clase para los objetos de tipo persona
+//es una superclase, de cual heredan Student y Admin
 public class Person {
      private String name;
     private String lastName;

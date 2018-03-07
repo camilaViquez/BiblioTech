@@ -12,6 +12,7 @@ import java.util.Set;
  *
  * @author Leonardo
  */
+//clase para el material audio visual
 public class AudiVisulMaterial extends Description {
     private int code;
     private String type;
