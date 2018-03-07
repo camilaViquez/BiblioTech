@@ -208,6 +208,9 @@ public class ControllerRegisterLoan {
 
     }
 
+<<<<<<< HEAD
+       
+=======
     
     public static int days(int day){
     File archivo = null;
@@ -251,4 +254,5 @@ public class ControllerRegisterLoan {
     }
     
      
+>>>>>>> 060d31d5b61cf28ffe30a05876a68620c0abb24d
 }

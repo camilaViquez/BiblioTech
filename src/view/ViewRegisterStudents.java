@@ -149,7 +149,7 @@ public class ViewRegisterStudents extends javax.swing.JFrame {
 
     private void registerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerActionPerformed
         // TODO add your handling code here:
-
+        /*Validacion de que los datos ingresados por el usuarios no sean en blanco*/
         String name = Name.getText().trim();
         if (name.isEmpty()) {
             JOptionPane.showMessageDialog(this, "Did not enter the name", "Warning", JOptionPane.WARNING_MESSAGE);
@@ -176,8 +176,8 @@ public class ViewRegisterStudents extends javax.swing.JFrame {
         String careerStudent = (String) career.getSelectedItem();
 
         try {
-            RandomAccesFile.createFile(new File("students.dat"));
-            RandomAccesFile.addStudent(new Student(id,name, lastName, careerStudent, password));
+            RandomAccesFile.createFile(new File("students.dat"));/// Busca el archivo y si no está lo crea
+            RandomAccesFile.addStudent(new Student(id,name, lastName, careerStudent, password));// crea un nuevo estudiante y lo agrega
             RandomAccesFile.close();
             JOptionPane.showMessageDialog(this, "The student was registered", "Notificación", JOptionPane.INFORMATION_MESSAGE);
         } catch (IOException ex) {
