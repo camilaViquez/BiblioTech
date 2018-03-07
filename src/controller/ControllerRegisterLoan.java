@@ -8,9 +8,11 @@ package controller;
 import domain.AudiVisulMaterial;
 import domain.Book;
 import domain.Loan;
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -148,17 +150,17 @@ public class ControllerRegisterLoan {
       /*Funcion para escribir los libros*/
     public static boolean write(Loan loan) {
         try {
-            ArrayList<Loan> listLoans= read();
+            ArrayList<Loan> listLoans=  read();
             listLoans.add(loan);
             
-            File f = new File("loan.obj");
+            File f = new File("loans.obj");
             FileOutputStream fos = new FileOutputStream(f);
 
             ObjectOutputStream salida = new ObjectOutputStream(fos);
             for (int i = 0; i < listLoans.size(); i++) {
                 Loan loanA= listLoans.get(i);
-                System.out.print(i);
-                
+                System.out.print(loanA.getID());
+                System.out.print("\n"+ i);
                 salida.writeObject(loanA);
             } 
             salida.close();
@@ -167,18 +169,17 @@ public class ControllerRegisterLoan {
 
 
         } catch (Exception e) {
-            System.out.print(e);
             return false;
         }
     }
-/*Funcion para leer el archivo que contiene la informacion de los libros y devuelve un Array de libros*/
+/*Funcion para leer el archivo que contiene la informacion de los prestamos y devuelve un Array de libros*/
     public static ArrayList<Loan> read() {
         ObjectInputStream archive = null;
 
         ArrayList<Loan> listLoans = new ArrayList<Loan>();
         int cont = 0;
         try {
-            File f = new File("loan.obj");
+            File f = new File("loans.obj");
             FileInputStream fis = new FileInputStream(f);
             archive = new ObjectInputStream(fis);
             while (true) {
@@ -189,12 +190,10 @@ public class ControllerRegisterLoan {
                     listLoans.add(loanA);
                 } catch (ClassNotFoundException ex) {
                     Logger.getLogger(ViewRegisterBook.class.getName()).log(Level.SEVERE, null, ex);
-                }
-               
+                } 
             }
-
         } catch (IOException io) {
-            System.out.println("\n" + io);
+            System.out.println("\n" + io+"Error en la lectura");
         } finally {
             try {
 
@@ -209,5 +208,47 @@ public class ControllerRegisterLoan {
 
     }
 
+    
+    public static int days(int day){
+    File archivo = null;
+        FileReader fr = null;
+        BufferedReader br = null;
+        String fine = "";
+        try {
+            // Apertura del fichero y creacion de BufferedReader para poder
+            // hacer una lectura comoda (disponer del metodo readLine()).
+            archivo = new File("configuration.txt");
+            fr = new FileReader(archivo);
+            br = new BufferedReader(fr);
+
+            // Lectura del fichero
+            String line="";
+            int cont = 0;
+
+            while ((line = br.readLine()) != null) {
+                if (cont == day) {
+                    fine = line.trim();
+                }
+                cont++;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            // En el finally cerramos el fichero, para asegurarnos
+            // que se cierra tanto si todo va bien como si salta 
+            // una excepcion.
+            try {
+                if (null != fr) {
+                    fr.close();
+                }
+            } catch (Exception e2) {
+                e2.printStackTrace();
+            }
+        }
+        int a=Integer.parseInt(fine);
+        System.out.println("a: "+a);
+        return a;
+    }
+    
      
 }

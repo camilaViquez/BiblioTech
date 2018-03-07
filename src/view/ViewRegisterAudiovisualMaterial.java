@@ -8,6 +8,7 @@ package view;
 import controller.ControllerRegisterMatAudiv;
 import domain.AudiVisulMaterial;
 import javax.swing.JOptionPane;
+import static view.ViewStudent.ID;
 
 /**
  *
@@ -18,8 +19,13 @@ public class ViewRegisterAudiovisualMaterial extends javax.swing.JFrame {
     /**
      * Creates new form ViewRegisterAudiovisualMaterial
      */
+    
+     public static String IDStudent;
+    public static String password;
     public ViewRegisterAudiovisualMaterial() {
         initComponents();
+         login l = new login();
+        IDStudent = l.id;
     }
 
     /**

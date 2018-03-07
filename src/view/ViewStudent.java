@@ -21,7 +21,8 @@ public class ViewStudent extends javax.swing.JFrame {
     public ViewStudent() {
         initComponents();
         login l = new login();
-        ID = l.name;
+        ID = l.id;
+        //System.out.print("passssssssssssssssssssssssssssssss   "+ID);
         //JOptionPane.showMessageDialog(this, ID + "PRIMERO");
     }
 
@@ -71,11 +72,11 @@ public class ViewStudent extends javax.swing.JFrame {
                         .addGap(34, 34, 34)
                         .addComponent(loans)
                         .addGap(34, 34, 34)
-                        .addComponent(deliverLoans, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(deliverLoans, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(111, 111, 111)
                         .addComponent(payFines)))
-                .addContainerGap(51, Short.MAX_VALUE))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -106,6 +107,11 @@ public class ViewStudent extends javax.swing.JFrame {
 
     private void deliverLoansActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deliverLoansActionPerformed
         // TODO add your handling code here:
+         ViewDeliveryLoans a = new  ViewDeliveryLoans();
+         a.setVisible(true);
+        
+        
+        
     }//GEN-LAST:event_deliverLoansActionPerformed
 
     /**

@@ -128,6 +128,8 @@ public class ViewAdministrador extends javax.swing.JFrame {
 
     private void RegisterDigitalB2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterDigitalB2ActionPerformed
         // TODO add your handling code here:
+        ViewConfiguration l = new ViewConfiguration();
+        l.setVisible(true);
     }//GEN-LAST:event_RegisterDigitalB2ActionPerformed
 
     /**

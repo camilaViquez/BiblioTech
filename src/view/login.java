@@ -21,6 +21,7 @@ public class login extends javax.swing.JFrame {
     /**
      * Creates new form login
      */
+    public static String id;
     public login() {
         initComponents();
     }
@@ -138,6 +139,7 @@ public class login extends javax.swing.JFrame {
     private void enterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enterButtonActionPerformed
         if (Student.isSelected()) {
             name = nameUser.getText().trim();
+           id=name;
             if (name.isEmpty()) {
                 JOptionPane.showMessageDialog(this, "Did not enter the username", "Warning", JOptionPane.WARNING_MESSAGE);
                 return;

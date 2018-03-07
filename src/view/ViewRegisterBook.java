@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import static view.ViewStudent.ID;
 
 /**
  *
@@ -27,8 +28,13 @@ public class ViewRegisterBook extends javax.swing.JFrame {
     /**
      * Creates new form ViewRegisterBook
      */
+    
+     public static String IDStudent;
+   
     public ViewRegisterBook() {
         initComponents();
+         login l = new login();
+        IDStudent = l.id;
     }
 
     /**

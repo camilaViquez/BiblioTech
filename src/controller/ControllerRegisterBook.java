@@ -48,7 +48,6 @@ public class ControllerRegisterBook {
 //          JOptionPane.showMessageDialog(this,"The book was correctly registered");
 
         } catch (Exception e) {
-            System.out.print(e);
             return false;
         }
     }
