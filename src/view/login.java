@@ -172,11 +172,9 @@ public class login extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "Error en la búsqueda de registros.", "Error", JOptionPane.ERROR_MESSAGE);
             }
         } else {
-<<<<<<< HEAD
-            if (Administrator.isSelected()) {
-=======
+
             if (AdministratorOpt.isSelected()) {
->>>>>>> eaebf9f09b3b3d27837026a948ca880412072fd2
+ 
                 String name = nameUser.getText().trim();
                 if (name.isEmpty()) {
                     JOptionPane.showMessageDialog(this, "Did not enter the username", "Warning", JOptionPane.WARNING_MESSAGE);
@@ -225,10 +223,6 @@ public class login extends javax.swing.JFrame {
         System.out.print(ex);
         }//*/
          
-<<<<<<< HEAD
-=======
-    
->>>>>>> eaebf9f09b3b3d27837026a948ca880412072fd2
     }//GEN-LAST:event_enterButtonActionPerformed
 
     private void AdministratorOptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdministratorOptActionPerformed

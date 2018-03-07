@@ -53,6 +53,12 @@ public class Student extends Person {
   public int getTamaño() {
         return getName().length()*2 + 2 + 4 + 1;
     }
+
+    @Override
+    public String toString() {
+        return "Student{" + "studentId=" + studentId + ", career=" + career + ", active=" + active + '}';
+    }
+  
     
     
 }
