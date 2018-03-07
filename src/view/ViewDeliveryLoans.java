@@ -6,7 +6,12 @@
 package view;
 
 import controller.ControllerDeliveryLoan;
+import static controller.ControllerDeliveryLoan.bookLoan;
+import controller.ControllerRegisterBook;
 import controller.ControllerRegisterLoan;
+import controller.ControllerRegisterMatAudiv;
+import domain.AudiVisulMaterial;
+import domain.Book;
 import domain.Loan;
 import java.util.Date;
 import javax.swing.JOptionPane;
@@ -103,33 +108,41 @@ public class ViewDeliveryLoans extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-         String idLoan = ID.getText().trim();
-         Loan loan=null;
-         java.util.Date dateSystem = new Date();
-         System.out.print("\n"+idLoan);
-       
-        if(!idLoan.isEmpty()){
+        String idLoan = ID.getText().trim();
+        Loan loan = null;
+        java.util.Date dateSystem = new Date();
+        System.out.print("\n" + idLoan);
+
+        if (!idLoan.isEmpty()) {
             loan = ControllerDeliveryLoan.loanCorrect(idLoan);
             loan.setActive(false);
-            int day=(int)((dateSystem.getTime() - loan.getDeliveryDate().getTime()  )/86400000);
-            loan.setDeliveryDate(ControllerRegisterLoan.addDaysDate(loan.getDeliveryDate(), -20));
-            
-            if(loan.isPenalty())
-            {
-                JOptionPane.showMessageDialog(this, "You have a delay of "+String.valueOf(day)+" days  "+"\n"+"The total to be paid is: "+ String.valueOf(day * ControllerDeliveryLoan.fine()));
-            }else
-            {
+            int day = (int) ((dateSystem.getTime() - loan.getDeliveryDate().getTime()) / 86400000);
+          //  loan.setDeliveryDate(ControllerRegisterLoan.addDaysDate(loan.getDeliveryDate(), -20));
+
+            if (loan.isPenalty()) {
+                JOptionPane.showMessageDialog(this, "You have a delay of " + String.valueOf(day) + " days  " + "\n" + "The total to be paid is: " + String.valueOf(day * ControllerDeliveryLoan.fine(2)));
+            } else {
                 JOptionPane.showMessageDialog(this, "Article received ");
             }
-            
+
             ControllerDeliveryLoan.writerNewLoan(idLoan);
-            
-            
-            
-            
-        }else
-        {
-            JOptionPane.showMessageDialog(this, "Incorrect data:  "+ idLoan);
+
+            Book books;
+            books = bookLoan(loan.getCodeArticle(), loan.getName());
+
+            AudiVisulMaterial matA = ControllerDeliveryLoan.materialLoan(loan.getCodeArticle(), loan.getName());
+            if (books != null) {
+                books.setQuantity(books.getQuantity() + 1);
+                ControllerRegisterBook.writeCapacity(books);
+
+            }
+            if (matA != null) {
+                matA.setQuantity(matA.getQuantity() + 1);
+                ControllerRegisterMatAudiv.writeDisponibilite(matA);
+            }
+
+        } else {
+            JOptionPane.showMessageDialog(this, "Incorrect data:  " + idLoan);
         }
 
   

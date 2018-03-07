@@ -44,9 +44,9 @@
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
-                      <Component id="Student" min="-2" max="-2" attributes="0"/>
+                      <Component id="StudentOpt" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="Administrator" min="-2" max="-2" attributes="0"/>
+                      <Component id="AdministratorOpt" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="95" max="-2" attributes="0"/>
@@ -75,8 +75,8 @@
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="Administrator" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="Student" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="AdministratorOpt" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="StudentOpt" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="enterButton" min="-2" pref="39" max="-2" attributes="0"/>
@@ -94,10 +94,13 @@
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JRadioButton" name="Administrator">
+    <Component class="javax.swing.JRadioButton" name="AdministratorOpt">
       <Properties>
         <Property name="text" type="java.lang.String" value="Administrator"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AdministratorOptActionPerformed"/>
+      </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>
@@ -110,7 +113,7 @@
         <Property name="text" type="java.lang.String" value="User:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JRadioButton" name="Student">
+    <Component class="javax.swing.JRadioButton" name="StudentOpt">
       <Properties>
         <Property name="text" type="java.lang.String" value="Student"/>
       </Properties>

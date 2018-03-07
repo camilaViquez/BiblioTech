@@ -36,9 +36,9 @@ public class login extends javax.swing.JFrame {
     private void initComponents() {
 
         passwordUser = new javax.swing.JTextField();
-        Administrator = new javax.swing.JRadioButton();
+        AdministratorOpt = new javax.swing.JRadioButton();
         jLabel1 = new javax.swing.JLabel();
-        Student = new javax.swing.JRadioButton();
+        StudentOpt = new javax.swing.JRadioButton();
         nameUser = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         enterButton = new javax.swing.JButton();
@@ -51,12 +51,17 @@ public class login extends javax.swing.JFrame {
             }
         });
 
-        Administrator.setText("Administrator");
+        AdministratorOpt.setText("Administrator");
+        AdministratorOpt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AdministratorOptActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel1.setText("User:");
 
-        Student.setText("Student");
+        StudentOpt.setText("Student");
 
         nameUser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -94,9 +99,9 @@ public class login extends javax.swing.JFrame {
                             .addComponent(passwordUser, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(56, 56, 56)
-                        .addComponent(Student)
+                        .addComponent(StudentOpt)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Administrator))
+                        .addComponent(AdministratorOpt))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(95, 95, 95)
                         .addComponent(enterButton, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -117,8 +122,8 @@ public class login extends javax.swing.JFrame {
                         .addComponent(nameUser, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Administrator)
-                    .addComponent(Student))
+                    .addComponent(AdministratorOpt)
+                    .addComponent(StudentOpt))
                 .addGap(18, 18, 18)
                 .addComponent(enterButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(62, Short.MAX_VALUE))
@@ -137,7 +142,7 @@ public class login extends javax.swing.JFrame {
     public static String name;
     public static String password;
     private void enterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enterButtonActionPerformed
-        if (Student.isSelected()) {
+        if (StudentOpt.isSelected()) {
             name = nameUser.getText().trim();
            id=name;
             if (name.isEmpty()) {
@@ -167,7 +172,11 @@ public class login extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "Error en la búsqueda de registros.", "Error", JOptionPane.ERROR_MESSAGE);
             }
         } else {
+<<<<<<< HEAD
             if (Administrator.isSelected()) {
+=======
+            if (AdministratorOpt.isSelected()) {
+>>>>>>> eaebf9f09b3b3d27837026a948ca880412072fd2
                 String name = nameUser.getText().trim();
                 if (name.isEmpty()) {
                     JOptionPane.showMessageDialog(this, "Did not enter the username", "Warning", JOptionPane.WARNING_MESSAGE);
@@ -183,7 +192,7 @@ public class login extends javax.swing.JFrame {
 
                     RandomAccesFile.createFile(new File("administrator.dat"));
                     int i = RandomAccesFile.searchAdmiRegister(name, password);
-                    JOptionPane.showMessageDialog(this, name + String.valueOf(i));
+                  
                     if (i == -1) {
                         JOptionPane.showMessageDialog(this, "Name Incorrect", "Warning", JOptionPane.WARNING_MESSAGE);
                         return;
@@ -216,7 +225,15 @@ public class login extends javax.swing.JFrame {
         System.out.print(ex);
         }//*/
          
+<<<<<<< HEAD
+=======
+    
+>>>>>>> eaebf9f09b3b3d27837026a948ca880412072fd2
     }//GEN-LAST:event_enterButtonActionPerformed
+
+    private void AdministratorOptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdministratorOptActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AdministratorOptActionPerformed
 
     /**
      * @param args the command line arguments
@@ -254,8 +271,8 @@ public class login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JRadioButton Administrator;
-    public javax.swing.JRadioButton Student;
+    public javax.swing.JRadioButton AdministratorOpt;
+    public javax.swing.JRadioButton StudentOpt;
     public javax.swing.JButton enterButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -263,3 +280,4 @@ public class login extends javax.swing.JFrame {
     public javax.swing.JTextField passwordUser;
     // End of variables declaration//GEN-END:variables
 }
+

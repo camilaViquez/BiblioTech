@@ -196,6 +196,8 @@ public class ViewConfiguration extends javax.swing.JFrame {
          {
              writeOptions(2,cant);
          }
+          
+           JOptionPane.showMessageDialog(this, "Valor actualizado");
          
       
          

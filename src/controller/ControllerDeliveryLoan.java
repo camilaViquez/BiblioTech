@@ -6,6 +6,8 @@
 package controller;
 
 import static controller.ControllerRegisterLoan.read;
+import domain.AudiVisulMaterial;
+import domain.Book;
 import domain.Loan;
 import java.io.BufferedReader;
 import java.io.File;
@@ -69,7 +71,7 @@ public class ControllerDeliveryLoan {
         }
     }
 
-    public static int fine() {
+    public static int fine(int opt) {
 
         File archivo = null;
         FileReader fr = null;
@@ -89,7 +91,7 @@ public class ControllerDeliveryLoan {
             while ((line = br.readLine()) != null) {
                 System.out.println("entaaaaaaa");
                 System.out.println("line: "+line);
-                if (cont == 2) {
+                if (cont == opt) {
                     fine = line.trim();
                 }
                 cont++;
@@ -140,6 +142,47 @@ public class ControllerDeliveryLoan {
 
         }
 
+    }
+    
+    public static Book bookLoan(String code, String name)
+    {
+        ArrayList<Book> list= ControllerRegisterBook.read();
+        int cont =0;
+        Book books = null;
+        while (list.size()>cont)
+        {
+            if(list.get(cont).getCode().equals(code)&& list.get(cont).getTitle().equals(name))
+            {
+                books= list.get(cont);
+                cont=list.size();
+            }else
+            {
+                
+            }
+            cont++;
+        }
+        return books;
+    }
+    
+    
+        public static AudiVisulMaterial materialLoan(String code, String name)
+    {
+        ArrayList<AudiVisulMaterial> list= ControllerRegisterMatAudiv.read();
+        int cont =0;
+        AudiVisulMaterial mat = null;
+        while (list.size()>cont)
+        {
+            if(list.get(cont).getCode()== Integer.parseInt(code) && list.get(cont).getType().equals(name))
+            {
+                mat= list.get(cont);
+                cont=list.size();
+            }else
+            {
+                
+            }
+            cont++;
+        }
+        return mat;
     }
 
 }
