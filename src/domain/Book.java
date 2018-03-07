@@ -24,7 +24,7 @@ public class Book extends Description implements Serializable {
         this.type = type;
         setDecription(description);
         setDisponibility(true);
-        setQuantity(1);
+        setQuantity(2);
     }
 
     

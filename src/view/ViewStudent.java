@@ -37,7 +37,6 @@ public class ViewStudent extends javax.swing.JFrame {
 
         loans = new javax.swing.JButton();
         deliverLoans = new javax.swing.JButton();
-        payFines = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -55,27 +54,15 @@ public class ViewStudent extends javax.swing.JFrame {
             }
         });
 
-        payFines.setText("Pay fines");
-        payFines.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                payFinesActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(34, 34, 34)
-                        .addComponent(loans)
-                        .addGap(34, 34, 34)
-                        .addComponent(deliverLoans, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(111, 111, 111)
-                        .addComponent(payFines)))
+                .addGap(34, 34, 34)
+                .addComponent(loans)
+                .addGap(34, 34, 34)
+                .addComponent(deliverLoans, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(29, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -85,9 +72,7 @@ public class ViewStudent extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(loans, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(deliverLoans, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(53, 53, 53)
-                .addComponent(payFines)
-                .addContainerGap(68, Short.MAX_VALUE))
+                .addContainerGap(146, Short.MAX_VALUE))
         );
 
         pack();
@@ -100,10 +85,6 @@ public class ViewStudent extends javax.swing.JFrame {
        l.setVisible(true);
        
     }//GEN-LAST:event_loansActionPerformed
-
-    private void payFinesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_payFinesActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_payFinesActionPerformed
 
     private void deliverLoansActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deliverLoansActionPerformed
         // TODO add your handling code here:
@@ -152,6 +133,5 @@ public class ViewStudent extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton deliverLoans;
     private javax.swing.JButton loans;
-    private javax.swing.JButton payFines;
     // End of variables declaration//GEN-END:variables
 }

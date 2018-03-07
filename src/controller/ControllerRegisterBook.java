@@ -48,6 +48,7 @@ public class ControllerRegisterBook {
 //          JOptionPane.showMessageDialog(this,"The book was correctly registered");
 
         } catch (Exception e) {
+            System.out.print("\n"+e+"  ");
             return false;
         }
     }
@@ -88,4 +89,43 @@ public class ControllerRegisterBook {
 
     }
 
+    
+    
+        public static boolean writeCapacity(Book book) {
+        try {
+            ArrayList<Book> listBook= read();
+            
+            
+            File f = new File("book.obj");
+            FileOutputStream fos = new FileOutputStream(f);
+
+            ObjectOutputStream salida = new ObjectOutputStream(fos);
+            for (int i = 0; i < listBook.size(); i++) {
+                if(listBook.get(i).getCode().equals(book.getCode()))
+                {
+                    salida.writeObject(book);
+                }
+                else
+                {
+                 Book bookA= listBook.get(i);
+                System.out.print(i);
+                System.out.print("\n"+ bookA.getTitle());
+                salida.writeObject(bookA);
+                }
+             
+            } 
+            salida.close();
+            return true;
+           
+//          JOptionPane.showMessageDialog(this,"The book was correctly registered");
+
+        } catch (Exception e) {
+            System.out.print("\n"+e+"  ");
+            return false;
+        }
+    }
+    
+    
+    
+    
 }

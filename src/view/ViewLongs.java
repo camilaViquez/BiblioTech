@@ -5,6 +5,7 @@
  */
 package view;
 
+import controller.ControllerDeliveryLoan;
 import controller.ControllerRegisterBook;
 import controller.ControllerRegisterLoan;
 import controller.ControllerRegisterMatAudiv;
@@ -166,18 +167,27 @@ public class ViewLongs extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(this, book.getTitle());
                
                      try{
-                         
-                         boolean v=ControllerRegisterLoan.write(loan);
-                         System.out.print(v);
-                         if(v){
-                         JOptionPane.showMessageDialog(this,"The item has been registered: "+loan.getName()+"\n"+"The delivery date: " +loan.getDeliveryDate());
+                         if(book.getQuantity()!=0)
+                         {
+                            boolean v=ControllerRegisterLoan.write(loan);
+                            book.setQuantity(book.getQuantity()-1);
+                            ControllerRegisterBook.writeCapacity(book);
+                            System.out.print(v);
+                            ControllerRegisterLoan.write(loan);
+                            if(v){
+                            JOptionPane.showMessageDialog(this,"The item has been registered: "+loan.getName()+"\n"+"The delivery date: " +loan.getDeliveryDate());
+                            }
+                         }else
+                         {
+                             JOptionPane.showMessageDialog(this,"not available books");
                          }
+                         
                      }catch(Exception e)
                      {
                          JOptionPane.showMessageDialog(this,"the item  has  not been registered");
                      }
                              
-                     ControllerRegisterLoan.write(loan);
+                     
                      
                      
                 }
@@ -186,25 +196,36 @@ public class ViewLongs extends javax.swing.JFrame {
                     java.util.Date date = new Date();
                     java.util.Date dateD;
                    dateD = ControllerRegisterLoan.addDaysDate(date,ControllerRegisterLoan.days(1) );
-                    Loan loan = new Loan(String.valueOf(material.getCode()), material.getType(), ID, date);
+                    Loan loan = new Loan(String.valueOf(material.getCode()), material.getType(), ID, dateD);
+                    loan.setDeliveryDate(dateD);
                      ArrayList<Loan> listLoans = new ArrayList<Loan>();
                      listLoans=ControllerRegisterLoan.read();
                     loan.setID(listLoans.size()+1);
+                    
                   
                      try{
-                         
-                        
-                         if (ControllerRegisterLoan.write(loan)){
+                         if(material.getQuantity()!= 0)
+                         {
+                             material.setQuantity(material.getQuantity()-1);
+                            ControllerRegisterMatAudiv.writeDisponibilite(material);
+                            ControllerRegisterLoan.write(loan);
+                            if (ControllerRegisterLoan.write(loan)){
                          JOptionPane.showMessageDialog(this," The item has been registered: "+loan.getName() +"\n"+" The delivery date is: " +loan.getDeliveryDate());
                      }
                          else {
-                                 JOptionPane.showMessageDialog(this,"FALSE");}
+                                 JOptionPane.showMessageDialog(this,"FALSE");} 
+                         }else
+                         {
+                              JOptionPane.showMessageDialog(this,"not available");
+                         }
+                        
+                         
                      }catch(Exception e)
                      {
                          JOptionPane.showMessageDialog(this,"the item not has been registered");
                      }
                              
-                     ControllerRegisterLoan.write(loan);
+                     
 
                 }
             }

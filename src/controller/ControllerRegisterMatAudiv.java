@@ -86,4 +86,41 @@ public class  ControllerRegisterMatAudiv {
         return listMaterial;
 
     }
+    
+    
+        public static boolean writeDisponibilite(AudiVisulMaterial material) {
+        try {
+            ArrayList<AudiVisulMaterial> listMaterial=  read();
+           
+            
+            File f = new File("materialAudiovisual.obj");
+            FileOutputStream fos = new FileOutputStream(f);
+
+            ObjectOutputStream salida = new ObjectOutputStream(fos);
+
+                for (int i = 0; i < listMaterial.size(); i++) {
+                if(listMaterial.get(i).getCode()==material.getCode())
+                {
+                    salida.writeObject(material);
+                }
+                else
+                {
+                 AudiVisulMaterial materialA= listMaterial.get(i);
+                System.out.print(i);
+                System.out.print("\n"+ materialA.getType());
+                salida.writeObject(materialA);
+                }
+             
+            }
+            salida.close();
+            return true;
+           
+//          JOptionPane.showMessageDialog(this,"The book was correctly registered");
+
+        } catch (Exception e) {
+            System.out.print(e);
+            return false;
+        }
+    }
+    
 }
